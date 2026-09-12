@@ -1,10 +1,5 @@
-import { queryOptions } from "@tanstack/react-query";
+﻿import { queryOptions } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-
-import preview1 from "@/assets/preview-1.jpg";
-import preview2 from "@/assets/preview-2.jpg";
-import preview3 from "@/assets/preview-3.jpg";
-import preview4 from "@/assets/preview-4.jpg";
 
 export type Category = {
   id: string;
@@ -20,20 +15,16 @@ export type Template = {
   code: string;
   title: string;
   description: string | null;
-  category_id: string;
-  preview_variant: number;
-  slides: number;
+  category_id: string;  slides: number;
   pdf_path: string | null;
   pptx_path: string | null;
   created_at: string;
 };
 
-export const PREVIEWS = [preview1, preview2, preview3, preview4];
-
-export function previewFor(variant: number) {
-  return PREVIEWS[(variant - 1 + PREVIEWS.length) % PREVIEWS.length];
+export function previewFor(template: Template): string {
+  const code = template.code.trim();
+  return /previews/.webp;
 }
-
 export type SortKey = "recent" | "name" | "slides";
 
 export const categoriesQuery = () =>
@@ -171,3 +162,4 @@ export async function getFileUrl(path: string) {
   if (error) return null;
   return data?.signedUrl ?? null;
 }
+

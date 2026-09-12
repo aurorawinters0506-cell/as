@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+﻿import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, FileText, LayoutGrid, Search, Sparkles } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
@@ -25,15 +25,15 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Smart Point — Premium PowerPoint Templates" },
+      { title: "Smart Point â€” Premium PowerPoint Templates" },
       {
         name: "description",
         content:
-          "Access more than 5,000 professional PowerPoint templates with search, categories, previews, PDF and PPTX downloads.",
+          "Access 347+ professional PowerPoint templates with search, categories, previews, PDF and PPTX downloads.",
       },
       {
         property: "og:title",
-        content: "Smart Point — Premium PowerPoint Templates",
+        content: "Smart Point â€” Premium PowerPoint Templates",
       },
       {
         property: "og:description",
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
 
 const SORTS: { key: SortKey; label: string }[] = [
   { key: "recent", label: "Newest" },
-  { key: "name", label: "Name (A–Z)" },
+  { key: "name", label: "Name (Aâ€“Z)" },
   { key: "slides", label: "Slide count" },
 ];
 
@@ -145,7 +145,7 @@ function Dashboard() {
             <span className="block text-primary">PowerPoint templates.</span>
           </h1>
           <p className="mt-3 max-w-lg text-sm text-muted-foreground">
-            Explore more than 5,000 templates designed to help you create
+            Explore 347+ templates designed to help you create
             presentations that make an impact.
           </p>
           <ul className="mt-5 flex flex-wrap gap-2">
@@ -194,7 +194,7 @@ function Dashboard() {
       <section>
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="text-xl font-bold">
-            {isSearching ? `Results for “${globalSearch}”` : activeCategory?.name}
+            {isSearching ? `Results for â€œ${globalSearch}â€` : activeCategory?.name}
           </h2>
           <span className="rounded-md bg-primary/20 px-2.5 py-1 text-xs text-foreground">
             {templates.data?.length ?? 0} templates available
@@ -285,3 +285,4 @@ export function SkeletonGrid() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+﻿import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Download, Eye, Heart, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -67,7 +67,7 @@ export function TemplateCard({
     <article className="template-card-3d group flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-card transition-[transform,border-color,box-shadow] hover:border-ring/60">
       <div className="relative m-2.5 overflow-hidden rounded-lg">
         <img
-          src={previewFor(template.preview_variant)}
+          src={previewFor(template)}
           alt={`Preview of the ${template.title} template`}
           loading="lazy"
           width={768}
@@ -102,7 +102,7 @@ export function TemplateCard({
         <div>
           <p className="text-sm font-semibold">{template.title}</p>
           <span className="mt-2 inline-block rounded-md bg-secondary px-2 py-1 text-[11px] text-muted-foreground">
-            {category?.name ?? "Template"} · {template.slides} slides
+            {category?.name ?? "Template"} Â· {template.slides} slides
           </span>
         </div>
 
@@ -173,3 +173,4 @@ function FormatButton({
     </Button>
   );
 }
+
